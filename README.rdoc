@@ -9,9 +9,11 @@ It implements the following common pattern:
 3. Send each message to another object for further processing
 4. Remove downloaded messages from the remote server
 
-Install using:
+== Installation
 
-  script/plugin install git://github.com/look/fetcher.git
+Add this to your Gemfile:
+
+  gem 'mail-fetcher', :github => 'sofatutor/fetcher', :require => 'fetcher'
 
 == Dependencies
 
@@ -57,7 +59,7 @@ The following options can be passed to the <tt>Fetcher.create</tt> factory metho
 
 The Fetcher plugin comes with a generator to create a daemon:
 
-  script/generate fetcher_daemon MailerDaemon
+  rails g fetcher_daemon MailerDaemon
   
 You should monitor the daemon using monit or god to ensure it does not crash.
 
@@ -97,5 +99,7 @@ You can read more about how to use the Fetcher in the PeepCode book {Receiving E
 Created by Dan Weinand and Luke Francl. Development supported by {Slantwise Design}[http://slantwisedesign.com].
 
 Generators for Rails 3 compatibility added by Amol Hatwár, Exceed Consulting.
+
+Added gemspec, removed legacy rails (< 3.0) support, updated readme by Martin Glaß, sofatutor.com.
 
 Licensed under the terms of the MIT License. Be excellent to each other.
